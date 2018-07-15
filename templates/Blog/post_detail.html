@@ -1,0 +1,33 @@
+{% extends "Blog/base.html" %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<section class="header1 cid-qWACT1NyRX" id="header1-o">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="mbr-white col-md-10">
+        <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
+          {{ post.title }}</h1>
+        <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
+          {% if post.published_date %}
+            {{ post.published_date }}
+          {% endif %}
+          {% if user.is_authenticated %}
+          <p class="text-center">
+            <a class="btn btn-danger btn-sm" href="{% url 'Blog:post_edit' pk=post.pk %}">
+              Edit
+            </a>
+          </p>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="post-content mx-5">
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>
+<!-- Editing -->
+{% endblock %}

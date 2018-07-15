@@ -1,0 +1,38 @@
+{% extends "Blog/base.html" %}
+{% load static %}
+
+{% block title %}
+  {% if post.title %}
+    {{ post.title }}
+  {% else %}
+    Blog
+  {% endif %}
+{% endblock %}
+{% block content %}
+<section class="header1 cid-qWACT1NyRX" id="header1-o">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="mbr-white col-md-10">
+        <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
+          BLOG</h1>
+        <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
+          Writing feeds the soul</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="centerstage">
+    {% for post in posts %}
+    <div class="post my-5">
+      <h1><a href="{% url 'Blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <div class="date">
+        <p>Published: {{ post.published_date }}</p>
+        <p>{{ post.text|truncatechars:240|linebreaksbr }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

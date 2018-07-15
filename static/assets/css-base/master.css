@@ -1,0 +1,42 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+body a {
+  color: #01C6B1;
+}
+
+body a:hover {
+  color: #AF07E1;
+}
+
+.centerstage {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.postdate {
+  text-align: center;
+}
+
+.posttitle {
+  font-size: 3em;
+  text-align: center;
+}
+
+.post {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.btn-comment {
+  position: absolute;
+  right: 0px;
+}
+
+.btn {
+  border-radius: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}

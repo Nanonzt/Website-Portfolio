@@ -1,0 +1,5 @@
+# Ignoring my hidden secrets
+local_settings.py
+
+# Project In Progress
+Gallery
